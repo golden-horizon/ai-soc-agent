@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 incident_reports.json
+mcp_incident_reports.json
+final_soc_report.txt
