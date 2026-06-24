@@ -104,3 +104,45 @@ Each incident returns:
 
 \- Recommended remediation actions
 
+
+
+\## Interactive AI SOC Assistant
+
+
+
+Run:
+
+
+
+```bash
+
+python ai\_soc\_assistant.py
+
+
+
+Which incidents should I escalate?
+
+Show MITRE mapping
+
+Give me remediation actions
+
+Give me summary
+
+
+
+The assistant reads mcp\_incident\_reports.json and answers SOC analyst questions.
+
+
+
+
+
+Then commit:
+
+
+
+```powershell
+
+git add .
+
+git commit -m "Add interactive SOC assistant documentation"
+
