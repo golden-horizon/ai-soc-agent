@@ -28,12 +28,24 @@ Important rules:
 - Focus only on response and remediation actions.
 - Prioritize actions by urgency.
 - Keep recommendations practical for a SOC analyst.
-
+- Distinguish between an attempted attack and a confirmed compromise.
+- If compromise is not confirmed, do not assume the attacker gained access.
+- Avoid recommending disruptive actions unless supported by evidence.
+- Prefer investigation and monitoring actions when evidence is limited.
+- Clearly identify precautionary recommendations.
+- Do not assume the technology stack.
+- Do not assume SQL Server, ASP.NET, Windows, Linux, cloud provider, or database type unless explicitly provided.
+- Use neutral wording like "database", "web application", or "authentication service".
+- Do not claim a breach occurred unless evidence confirms successful access.
+- Treat this as an attempted attack unless logs prove compromise.
+- Do not provide technology examples unless they appear in the incident data.
+- Do not use phrases such as "e.g. ASP.NET", "e.g. SQL Server", or similar examples.
+- Keep recommendations technology-neutral when the environment is unknown.
 Return your answer in this structure:
 
 1. Immediate Containment Actions:
 2. Investigation Actions:
-3. Eradication / Remediation Actions:
+3. Eradication / Remediation Actions
 4. Recovery Actions:
 5. Prevention Improvements:
 6. Owner Teams:

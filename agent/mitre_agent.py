@@ -19,6 +19,12 @@ Rules:
 - Do not discuss remediation.
 - Do not discuss CVEs.
 - Do not discuss business impact.
+- For SQL Injection, login bypass attempts, public web endpoint attacks, or malicious web requests, prefer:
+  T1190 - Exploit Public-Facing Application
+  Tactic: Initial Access
+- Do not use API Abuse unless the incident clearly shows API misuse, excessive API calls, or abuse of API authentication.
+- Do not invent sub-techniques such as T1018.006.
+- If the incident is a web login attack with SQL injection syntax, map it to T1190.
 
 Mapping hints:
 
