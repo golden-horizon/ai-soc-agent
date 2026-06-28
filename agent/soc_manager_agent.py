@@ -29,7 +29,7 @@ class SOCManagerAgent(LLMAgent):
         self.threat_intel_agent = ThreatIntelAgent()
         self.remediation_agent = RemediationAgent()
 
-    def investigate(self, incident: dict) -> dict:
+    def investigate(self, incident: dict, generate_summary: bool = True) -> dict:
       case = InvestigationCase(incident)
       case.add_timeline_event("Case created")
 
@@ -56,9 +56,13 @@ class SOCManagerAgent(LLMAgent):
       case.remediation = self.remediation_agent.recommend_actions(incident)
       case.add_timeline_event("Remediation plan generated")
 
-      summary_context = self.build_summary_context(case.to_dict())
-      case.executive_summary = self.create_executive_summary(summary_context)
-      case.add_timeline_event("Executive summary generated")
+      if generate_summary:
+         summary_context = self.build_summary_context(case.to_dict())
+         case.executive_summary = self.create_executive_summary(summary_context)
+         case.add_timeline_event("Executive summary generated")
+      else:
+         case.executive_summary = "Skipped in fast mode"
+         case.add_timeline_event("Executive summary skipped")
 
       return case.to_dict()
 

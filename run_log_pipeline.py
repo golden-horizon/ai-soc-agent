@@ -34,7 +34,10 @@ def main():
         print(f"INCIDENT {index}")
         print(f"{'=' * 60}")
 
-        investigation = soc_manager.investigate(incident)
+        investigation = soc_manager.investigate(
+           incident,
+           generate_summary=False,
+        )
         investigations.append(investigation)
 
         repository.save_case(investigation)

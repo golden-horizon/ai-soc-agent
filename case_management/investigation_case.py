@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 from typing import Any
+from uuid import uuid4
 
 
 class InvestigationCase:
@@ -11,7 +12,10 @@ class InvestigationCase:
     """
 
     def __init__(self, incident: dict[str, Any]):
-        self.case_id = f"CASE-{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')}"
+        timestamp = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+        unique_id = uuid4().hex[:8]
+
+        self.case_id = f"CASE-{timestamp}-{unique_id}" 
         self.created_at = datetime.now(timezone.utc).isoformat()
         self.status = "Open"
 
