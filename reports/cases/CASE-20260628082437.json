@@ -105,9 +105,10 @@
       "event": "Executive summary generated"
     }
   ],
-  "event_count": 7,
-  "last_seen": "2026-06-28T10:48:18.071297+00:00",
+  "event_count": 8,
+  "last_seen": "2026-06-28T11:35:36.161401+00:00",
   "related_logs": [
+    "2026-06-28 12:10:20 Azure EntraID impossible travel source_ip=20.55.44.9 user=user@company.com",
     "2026-06-28 12:10:20 Azure EntraID impossible travel source_ip=20.55.44.9 user=user@company.com",
     "2026-06-28 12:10:20 Azure EntraID impossible travel source_ip=20.55.44.9 user=user@company.com"
   ],
@@ -115,5 +116,7 @@
     "country": "Unknown",
     "reputation": "Unknown",
     "threat_score": 0
-  }
+  },
+  "severity": "Medium",
+  "escalation_reason": "No escalation threshold reached."
 }

@@ -1,3 +1,4 @@
+
 class CorrelationEngine:
     """
     Finds whether a new incident matches an existing open case.

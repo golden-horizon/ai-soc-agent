@@ -119,9 +119,10 @@
       "event": "Executive summary generated"
     }
   ],
-  "event_count": 12,
-  "last_seen": "2026-06-28T10:48:17.846917+00:00",
+  "event_count": 13,
+  "last_seen": "2026-06-28T11:35:35.914903+00:00",
   "related_logs": [
+    "2026-06-28 12:01:30 GET /search?q=<script>alert(1)</script> source_ip=88.12.44.7 user=guest",
     "2026-06-28 12:01:30 GET /search?q=<script>alert(1)</script> source_ip=88.12.44.7 user=guest",
     "2026-06-28 12:01:30 GET /search?q=<script>alert(1)</script> source_ip=88.12.44.7 user=guest"
   ],
@@ -129,5 +130,7 @@
     "country": "Unknown",
     "reputation": "Unknown",
     "threat_score": 0
-  }
+  },
+  "severity": "High",
+  "escalation_reason": "Repeated suspicious activity detected: 13 related events."
 }

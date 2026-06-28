@@ -105,9 +105,10 @@
       "event": "Executive summary skipped"
     }
   ],
-  "event_count": 7,
-  "last_seen": "2026-06-28T10:48:18.302323+00:00",
+  "event_count": 8,
+  "last_seen": "2026-06-28T11:35:36.404487+00:00",
   "related_logs": [
+    "2026-06-28 12:20:30 Linux outbound suspicious connection source_ip=10.0.1.50 user=unknown",
     "2026-06-28 12:20:30 Linux outbound suspicious connection source_ip=10.0.1.50 user=unknown",
     "2026-06-28 12:20:30 Linux outbound suspicious connection source_ip=10.0.1.50 user=unknown"
   ],
@@ -115,5 +116,7 @@
     "country": "Unknown",
     "reputation": "Unknown",
     "threat_score": 0
-  }
+  },
+  "severity": "Medium",
+  "escalation_reason": "No escalation threshold reached."
 }

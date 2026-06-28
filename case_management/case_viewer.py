@@ -22,6 +22,7 @@ def show_cases() -> None:
     table.add_column("Attack Type", style="magenta", width=15)
     table.add_column("Source IP", style="white", width=15)
     table.add_column("User", style="white", width=10)
+    table.add_column("Events", style="yellow", width=8)
 
     for case in cases:
         incident = case.get("incident", {})
@@ -33,6 +34,7 @@ def show_cases() -> None:
             incident.get("attack_type", "unknown"),
             incident.get("source_ip", "unknown"),
             incident.get("user", "unknown"),
+            str(case.get("event_count", 1)),
         )
 
     console.print(table)

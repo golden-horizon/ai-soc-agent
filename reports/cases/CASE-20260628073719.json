@@ -105,9 +105,10 @@
       "event": "Executive summary generated"
     }
   ],
-  "event_count": 11,
-  "last_seen": "2026-06-28T10:48:17.888031+00:00",
+  "event_count": 12,
+  "last_seen": "2026-06-28T11:35:35.960633+00:00",
   "related_logs": [
+    "2026-06-28 12:05:10 AWS CloudTrail ConsoleLogin failed login source_ip=52.91.10.20 user=root",
     "2026-06-28 12:05:10 AWS CloudTrail ConsoleLogin failed login source_ip=52.91.10.20 user=root",
     "2026-06-28 12:05:10 AWS CloudTrail ConsoleLogin failed login source_ip=52.91.10.20 user=root"
   ],
@@ -115,5 +116,7 @@
     "country": "Unknown",
     "reputation": "Unknown",
     "threat_score": 0
-  }
+  },
+  "severity": "High",
+  "escalation_reason": "Repeated suspicious activity detected: 12 related events."
 }

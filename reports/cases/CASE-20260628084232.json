@@ -105,9 +105,10 @@
       "event": "Executive summary generated"
     }
   ],
-  "event_count": 7,
-  "last_seen": "2026-06-28T10:48:18.223695+00:00",
+  "event_count": 8,
+  "last_seen": "2026-06-28T11:35:36.324216+00:00",
   "related_logs": [
+    "2026-06-28 12:15:30 Splunk notable event suspicious connection source_ip=192.0.2.44 user=unknown",
     "2026-06-28 12:15:30 Splunk notable event suspicious connection source_ip=192.0.2.44 user=unknown",
     "2026-06-28 12:15:30 Splunk notable event suspicious connection source_ip=192.0.2.44 user=unknown"
   ],
@@ -115,5 +116,7 @@
     "country": "Unknown",
     "reputation": "Unknown",
     "threat_score": 0
-  }
+  },
+  "severity": "Medium",
+  "escalation_reason": "No escalation threshold reached."
 }

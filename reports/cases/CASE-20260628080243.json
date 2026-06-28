@@ -73,7 +73,7 @@
       "Security Team"
     ]
   },
-  "soc_decision": "Monitor",
+  "soc_decision": "Investigate Within 15 Minutes",
   "executive_summary": "1. SOC Decision: Monitor\n\n2. Executive Summary:\nThe incident involved an API abuse attack attempt originating from the IP address 18.222.44.10 with a user that is unknown. The request pattern observed was suspicious, indicating potential malicious activity. No CISA KEV match was found and no known CVEs were identified in the provided data.\n\n3. Confirmed Facts:\n- The incident involved API abuse attack attempt.\n- The source IP address for the attack was 18.222.44.10.\n- The user attempting to access the system is unknown.\n- The request pattern observed during this incident was suspicious, indicating an attempted attack.\n\n4. Assumptions / Unknowns:\n- The specific API being abused and the reason behind the malicious activity are unknown.\n- It is assumed that the attacker is using automated means (bots or scripts) for this activity.\n- The full extent of potential damage from this event is not yet clear, as no evidence of a successful compromise was found.\n\n5. Business Impact:\nThe attack attempt could potentially cause unauthorized access to systems, data breaches, and disruption of services if it were to be successfully executed. However, based on the limited information provided in the structured case data, the actual impact level cannot be fully determined yet.\n\n6. Immediate Next Steps:\n- Continue monitoring the source IP address 18.222.44.10 for any further suspicious activity.\n- Collect additional forensic logs to ensure a complete understanding of the incident.\n- Re-evaluate threat intelligence and correlate with other incidents or known threats that may be associated with this source IP address.\n- Coordinate with external security teams for cross-referencing data and insights.\n\n7. Confidence:\nThe SOC decision is based on the observed suspicious API abuse pattern, which has been flagged as a potential attack attempt. However, without further evidence of a successful compromise, it cannot yet be classified as an \"attack confirmed.\" The monitoring approach will continue to ensure that any additional malicious activity is promptly addressed.",
   "timeline": [
     {
@@ -105,9 +105,10 @@
       "event": "Executive summary generated"
     }
   ],
-  "event_count": 10,
-  "last_seen": "2026-06-28T10:48:17.917737+00:00",
+  "event_count": 11,
+  "last_seen": "2026-06-28T11:35:35.993967+00:00",
   "related_logs": [
+    "2026-06-28 12:05:20 AWS CloudTrail AssumeRole suspicious api abuse source_ip=18.222.44.10 user=unknown",
     "2026-06-28 12:05:20 AWS CloudTrail AssumeRole suspicious api abuse source_ip=18.222.44.10 user=unknown",
     "2026-06-28 12:05:20 AWS CloudTrail AssumeRole suspicious api abuse source_ip=18.222.44.10 user=unknown"
   ],
@@ -115,5 +116,7 @@
     "country": "United States",
     "reputation": "Suspicious",
     "threat_score": 70
-  }
+  },
+  "severity": "High",
+  "escalation_reason": "Repeated suspicious activity detected: 11 related events."
 }

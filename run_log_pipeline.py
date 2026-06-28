@@ -1,23 +1,24 @@
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 
+from collectors.collector_manager import CollectorManager
 from agent.log_analysis_agent import LogAnalysisAgent
 from agent.soc_manager_agent import SOCManagerAgent
-from collectors.collector_manager import CollectorManager
 from case_management.case_repository import CaseRepository
-from datetime import datetime, timezone
 from engine.correlation_engine import CorrelationEngine
+from engine.severity_escalation import SeverityEscalationEngine
 
 
 def main():
     collector_manager = CollectorManager()
-    sample_logs = collector_manager.collect_logs()
-    repository = CaseRepository()
-
     log_agent = LogAnalysisAgent()
     soc_manager = SOCManagerAgent()
+    repository = CaseRepository()
 
-    analysis_result = log_agent.analyze(sample_logs)
+    logs = collector_manager.collect_logs()
+
+    analysis_result = log_agent.analyze(logs)
     incidents = log_agent.findings_to_incidents(analysis_result)
 
     investigations = []
@@ -42,29 +43,32 @@ def main():
         )
 
         if existing_case:
-              existing_case["event_count"] = existing_case.get("event_count", 1) + 1
-              existing_case["last_seen"] = datetime.now(timezone.utc).isoformat()
+            existing_case["event_count"] = existing_case.get("event_count", 1) + 1
+            existing_case["last_seen"] = datetime.now(timezone.utc).isoformat()
 
-              existing_case.setdefault("related_logs", [])
-              existing_case["related_logs"].append(incident.get("raw_log", ""))
+            existing_case.setdefault("related_logs", [])
+            existing_case["related_logs"].append(incident.get("raw_log", ""))
 
-              repository.save_case(existing_case)
+            existing_case = SeverityEscalationEngine.evaluate(existing_case)
 
-              print(f"Attack Type : {incident['attack_type']}")
-              print(f"Source IP   : {incident['source_ip']}")
-              print(f"User        : {incident['user']}")
-              print(f"\nMatched Existing Case : {existing_case['case_id']}")
-              print(f"Event Count           : {existing_case['event_count']}")
+            repository.save_case(existing_case)
+            investigations.append(existing_case)
 
-        continue
+            print(f"Attack Type : {incident['attack_type']}")
+            print(f"Source IP   : {incident['source_ip']}")
+            print(f"User        : {incident['user']}")
+            print(f"\nMatched Existing Case : {existing_case['case_id']}")
+            print(f"Event Count           : {existing_case['event_count']}")
+            print(f"Severity              : {existing_case.get('severity', 'unknown')}")
+            print(f"Decision              : {existing_case.get('soc_decision', 'unknown')}")
 
-        investigation = soc_manager.investigate(
-           incident,
-           generate_summary=False,
-        )
-        investigations.append(investigation)
+            continue
+
+        investigation = soc_manager.investigate(incident)
+        investigation = SeverityEscalationEngine.evaluate(investigation)
 
         repository.save_case(investigation)
+        investigations.append(investigation)
 
         print(f"Attack Type : {incident['attack_type']}")
         print(f"Source IP   : {incident['source_ip']}")
@@ -72,6 +76,7 @@ def main():
 
         print(f"\nCase ID     : {investigation['case_id']}")
         print(f"Decision    : {investigation['soc_decision']}")
+        print(f"Severity    : {investigation.get('severity', 'unknown')}")
 
     output_file = Path("reports/log_pipeline_cases.json")
     output_file.parent.mkdir(exist_ok=True)
