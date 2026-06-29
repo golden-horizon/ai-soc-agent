@@ -1,229 +1,271 @@
-#  Agentic AI Security Operations Platform
+# Agentic AI Security Operations Platform
 
-### AI • Agentic Workflows • Cybersecurity • Threat Detection • Incident Response
+An Agentic AI-powered Security Operations Platform that combines multi-agent investigation workflows, threat intelligence enrichment, MITRE ATT&CK mapping, case management, and real-time security monitoring into a unified security operations environment.
 
-An Agentic AI-powered cybersecurity platform that automates threat detection, threat intelligence enrichment, incident correlation, severity escalation, case management, and analyst investigations through a multi-agent architecture.
-
-The platform collects security events from cloud, operating system, application, and network environments, transforming raw logs into actionable investigations and security cases.
+The platform demonstrates how modern security teams can leverage Agentic AI architectures, MCP integrations, Pydantic AI, FastAPI services, and React dashboards to automate and accelerate security investigations.
 
 ---
 
-##  Core Capabilities
+## Key Features
 
-### Multi-Source Security Monitoring
+### Agentic AI Investigation Workflow
 
-Collects and processes security events from:
+Security incidents are processed through a coordinated multi-agent pipeline:
 
-* Windows Event Logs
-* Linux Syslog
-* AWS CloudTrail
-* AWS CloudWatch
-* Azure Activity Logs
-* Firewall Logs
-* Web Application Logs
-* Splunk Events
-* Custom Security Event Sources
+* Log Collection Agent
+* Detection Agent
+* MITRE ATT&CK Agent
+* Threat Intelligence Agent
+* Correlation Agent
+* Severity Escalation Agent
+* Case Management Agent
+* Investigation Agent
 
-### AI-Powered Security Operations
-
-* Threat Detection
-* Incident Correlation
-* Threat Intelligence Enrichment
-* Security Investigation Workflows
-* Severity Escalation
-* Analyst Decision Support
-* Case Lifecycle Management
-* Executive Summary Generation
+Each agent contributes specialized context before passing results to the next stage, producing a complete investigation output.
 
 ---
 
-##  Agentic AI Architecture
+## Multi-Agent Workflow
 
-### Log Collection Agent
 
-Collects, normalizes, and processes security events from multiple environments.
+Security Event
+      ↓
+Log Collection Agent
+      ↓
+Detection Agent
+      ↓
+MITRE ATT&CK Agent
+      ↓
+Threat Intelligence Agent
+      ↓
+Correlation Agent
+      ↓
+Severity Escalation Agent
+      ↓
+Case Management Agent
+      ↓
+Investigation Agent
+      ↓
+Final Investigation Report
 
-### Detection Agent
 
-Identifies suspicious activities including:
 
-* SQL Injection
-* Brute Force Attacks
-* Cross-Site Scripting (XSS)
-* API Abuse
-* Network Anomalies
-* Privilege Escalation
-* Port Scanning
-* Suspicious Outbound Activity
+## Security Capabilities
 
-### MITRE ATT&CK Agent
+### Threat Detection
 
-Provides ATT&CK-based incident enrichment and adversary behavior context for investigations.
+* SQL Injection Detection
+* Brute Force Detection
+* Cross-Site Scripting (XSS) Detection
+* API Abuse Detection
+* Session Hijacking Detection
+* Correlated Multi-Vector Attacks
 
-### Threat Intelligence Agent
+### Threat Intelligence Enrichment
 
-Enriches investigations with:
+* IP Reputation Analysis
+* Geographic Attribution
+* Threat Scoring
+* Risk Prioritization
+* Security Context Enrichment
 
-* IP Reputation
-* Threat Scores
-* Country Attribution
-* Confidence Ratings
-* Security Context
+### MITRE ATT&CK Integration
 
-### Correlation Agent
+The platform maps detected activity to MITRE ATT&CK techniques and tactics, enabling analysts to understand attacker behavior and investigation priorities.
 
-Correlates related security events into investigations using:
+Example mappings:
 
-* Attack Type
-* Source IP
-* User Identity
-* Event Recurrence Patterns
-
-### Severity Escalation Agent
-
-Automatically evaluates incident severity and prioritization.
-
-Outputs include:
-
-* Medium
-* High
-* Critical
-* Escalate Immediately
-
-### Case Management Agent
-
-Manages the complete investigation lifecycle:
-
-* Open
-* In Progress
-* Resolved
-* Closed
-* Reopened
-
-Supports analyst notes and workflow tracking.
-
-### Investigation Agent
-
-Generates:
-
-* Executive Summaries
-* Investigation Findings
-* Business Impact Analysis
-* Recommended Actions
-* Remediation Guidance
+| Attack Type   | MITRE Technique                           |
+| ------------- | ----------------------------------------- |
+| SQL Injection | T1190 – Exploit Public-Facing Application |
+| Brute Force   | T1110 – Brute Force                       |
+| XSS           | T1059 – Command and Scripting Interpreter |
 
 ---
 
-##  AI & Agentic Technology Stack
+## AI Technologies
 
-### Artificial Intelligence
+### Pydantic AI
 
-* Qwen
+The platform uses Pydantic AI for:
+
+* Structured investigation outputs
+* Agent communication
+* Validation of security intelligence
+* Consistent investigation reports
+
+### Model Context Protocol (MCP)
+
+The platform demonstrates MCP-based integrations for:
+
+* Security investigation tools
+* Threat intelligence enrichment
+* Incident analysis workflows
+* Agent-tool communication
+
+### Local LLM Ready Architecture
+
+The platform is designed for integration with local Large Language Models such as:
+
 * Ollama
-* Pydantic AI
-* Model Context Protocol (MCP)
-* Agent-Based Workflows
+* Qwen
+* Future on-premise security LLM deployments
 
-### Backend
+The architecture allows AI-generated investigation summaries and analyst recommendations without requiring cloud-hosted AI services.
+
+---
+
+## Backend Technologies
 
 * Python
 * FastAPI
-* Pydantic
-* Rich
+* Pydantic AI
+* MCP
+* JSON-based investigation pipeline
+* REST APIs
+* GitHub Actions CI/CD
 
-### Frontend
+---
+
+## Frontend Technologies
 
 * React
 * Vite
+* React Router
 * Axios
-
-### Security Technologies
-
-* MITRE ATT&CK
-* Threat Intelligence
-* Incident Correlation
-* Security Operations Center (SOC) Workflows
-* Incident Response Automation
+* Socket.IO
+* Responsive Security Dashboard
 
 ---
 
-##  Platform Features
+## Dashboard Features
 
-### Security Dashboard
+* Security Overview Metrics
+* Incident Tracking
+* AI Escalated Cases
+* Threat Intelligence Panel
+* MITRE ATT&CK Context
+* Executive Dashboard
+* Threat Hunting
+* Investigation Workspace
+* Interactive Incident Analysis
 
-* Security Overview
-* Threat Metrics
-* Escalated Cases
-* Investigation Queue
-* Severity Analytics
-* Threat Intelligence Views
+---
 
-### Investigation Portal
+## Case Management
 
-* Case Details
-* Threat Intelligence Enrichment
-* Executive Summaries
+The platform supports:
+
+* Case Creation
+* Case Search
 * Analyst Notes
-* Event Tracking
-* Investigation Timeline
-* Severity Escalation Tracking
-
-### API Layer
-
-* Case Management APIs
-* Investigation APIs
-* Statistics APIs
-* High-Priority Case APIs
+* Investigation Updates
+* Escalation Decisions
+* Severity Tracking
+* Investigation History
 
 ---
 
-##  High-Level Architecture
+## API Endpoints
 
-Log Sources
-↓
-Log Collection Agent
-↓
-Detection Agent
-↓
-MITRE ATT&CK Agent
-↓
-Threat Intelligence Agent
-↓
-Correlation Agent
-↓
-Severity Escalation Agent
-↓
-Case Management Agent
-↓
-Investigation Agent
-↓
-FastAPI Backend
-↓
+### Statistics
+
+```http
+GET /statistics
+```
+
+### High Priority Cases
+
+```http
+GET /high-priority
+```
+
+### Case Search
+
+```http
+GET /cases
+```
+
+### Case Details
+
+```http
+GET /case/{case_id}
+```
+
+---
+
+## CI/CD
+
+GitHub Actions automatically validates the platform by:
+
+* Installing dependencies
+* Verifying Python syntax
+* Executing the Multi-Agent Orchestrator
+* Validating investigation workflow functionality
+
+---
+
+## Project Architecture
+
+```text
+Windows Logs
+Linux Logs
+AWS Logs
+Azure Logs
+Firewall Logs
+Application Logs
+        ↓
+Log Collection
+        ↓
+Detection Engine
+        ↓
+Threat Intelligence
+        ↓
+MITRE ATT&CK Mapping
+        ↓
+Multi-Agent Workflow
+        ↓
+Case Management
+        ↓
+FastAPI Services
+        ↓
 React Dashboard
+```
 
 ---
 
-##  Platform Screenshots
+## Learning Objectives
 
-* Security Dashboard
-* Escalated AI Cases
-* Investigation Portal
-* API Documentation
+This project demonstrates practical implementation of:
 
----
-
-##  Roadmap
-
-* Advanced Local LLM Investigations
-* AI Security Copilot
-* Automated Remediation Workflows
-* Real-Time Streaming Analytics
-* Multi-Agent Security Orchestration
-* Cloud-Native Deployment
-* Advanced Threat Hunting
+* Agentic AI Architectures
+* Security Operations (SOC)
+* Multi-Agent Systems
+* Pydantic AI
+* Model Context Protocol (MCP)
+* Threat Intelligence
+* MITRE ATT&CK
+* FastAPI Development
+* React Dashboards
+* CI/CD Pipelines
+* Security Automation
 
 ---
 
-##  Project Goal
+## Future Enhancements
 
-Demonstrate how Agentic AI can be applied to modern Security Operations Centers (SOC) by combining threat detection, intelligence enrichment, investigation workflows, and case management into a unified security platform.
+* Local LLM Investigation Agent (Ollama + Qwen)
+* Automated Threat Hunting
+* Advanced Correlation Rules
+* Database Persistence
+* Docker Deployment
+* Cloud-Native Security Integrations
+
+---
+
+## Author
+
+Navid Ghobadpour
+
+Agentic AI Security Operations Platform
+Built to explore the intersection of Cybersecurity, Agentic AI, MCP, Pydantic AI, and Security Automation.
