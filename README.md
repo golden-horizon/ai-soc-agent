@@ -1,148 +1,229 @@
-\# AI SOC Agent
+#  Agentic AI Security Operations Platform
 
+### AI • Agentic Workflows • Cybersecurity • Threat Detection • Incident Response
 
+An Agentic AI-powered cybersecurity platform that automates threat detection, threat intelligence enrichment, incident correlation, severity escalation, case management, and analyst investigations through a multi-agent architecture.
 
-AI SOC Agent is a cybersecurity incident analysis tool built with Python.
+The platform collects security events from cloud, operating system, application, and network environments, transforming raw logs into actionable investigations and security cases.
 
+---
 
+##  Core Capabilities
 
-\## Features
+### Multi-Source Security Monitoring
 
+Collects and processes security events from:
 
+* Windows Event Logs
+* Linux Syslog
+* AWS CloudTrail
+* AWS CloudWatch
+* Azure Activity Logs
+* Firewall Logs
+* Web Application Logs
+* Splunk Events
+* Custom Security Event Sources
 
-\- Detects Brute Force attacks
+### AI-Powered Security Operations
 
-\- Detects SQL Injection attempts
+* Threat Detection
+* Incident Correlation
+* Threat Intelligence Enrichment
+* Security Investigation Workflows
+* Severity Escalation
+* Analyst Decision Support
+* Case Lifecycle Management
+* Executive Summary Generation
 
-\- Detects XSS attempts
+---
 
-\- Detects API Abuse
+##  Agentic AI Architecture
 
-\- Detects Session Hijacking
+### Log Collection Agent
 
-\- Maps incidents to MITRE ATT\&CK
+Collects, normalizes, and processes security events from multiple environments.
 
-\- Generates recommended remediation actions
+### Detection Agent
 
-\- Exports incident reports to JSON
+Identifies suspicious activities including:
 
+* SQL Injection
+* Brute Force Attacks
+* Cross-Site Scripting (XSS)
+* API Abuse
+* Network Anomalies
+* Privilege Escalation
+* Port Scanning
+* Suspicious Outbound Activity
 
+### MITRE ATT&CK Agent
 
-\## Run
+Provides ATT&CK-based incident enrichment and adversary behavior context for investigations.
 
+### Threat Intelligence Agent
 
+Enriches investigations with:
 
-```bash
+* IP Reputation
+* Threat Scores
+* Country Attribution
+* Confidence Ratings
+* Security Context
 
-python agent.py
+### Correlation Agent
 
+Correlates related security events into investigations using:
 
+* Attack Type
+* Source IP
+* User Identity
+* Event Recurrence Patterns
 
-\## MCP Integration
+### Severity Escalation Agent
 
+Automatically evaluates incident severity and prioritization.
 
+Outputs include:
 
-This project includes an MCP server exposing SOC analysis tools:
+* Medium
+* High
+* Critical
+* Escalate Immediately
 
+### Case Management Agent
 
+Manages the complete investigation lifecycle:
 
-\- `soc\_map\_attack`
+* Open
+* In Progress
+* Resolved
+* Closed
+* Reopened
+
+Supports analyst notes and workflow tracking.
 
-\- `soc\_calculate\_severity`
+### Investigation Agent
 
-\- `soc\_map\_mitre`
+Generates:
 
-\- `soc\_recommend\_actions`
+* Executive Summaries
+* Investigation Findings
+* Business Impact Analysis
+* Recommended Actions
+* Remediation Guidance
 
+---
 
+##  AI & Agentic Technology Stack
 
-The MCP client successfully calls the server and returns:
+### Artificial Intelligence
 
+* Qwen
+* Ollama
+* Pydantic AI
+* Model Context Protocol (MCP)
+* Agent-Based Workflows
 
+### Backend
 
-```text
+* Python
+* FastAPI
+* Pydantic
+* Rich
 
-Attack: Brute Force
+### Frontend
 
-Severity: High
+* React
+* Vite
+* Axios
 
-MITRE: T1110 - Brute Force
+### Security Technologies
 
-Actions: Block source IP
+* MITRE ATT&CK
+* Threat Intelligence
+* Incident Correlation
+* Security Operations Center (SOC) Workflows
+* Incident Response Automation
 
+---
 
+##  Platform Features
 
-\## Current MCP Test Output
+### Security Dashboard
 
+* Security Overview
+* Threat Metrics
+* Escalated Cases
+* Investigation Queue
+* Severity Analytics
+* Threat Intelligence Views
 
+### Investigation Portal
 
-The MCP client successfully analyzes multiple security incidents:
+* Case Details
+* Threat Intelligence Enrichment
+* Executive Summaries
+* Analyst Notes
+* Event Tracking
+* Investigation Timeline
+* Severity Escalation Tracking
 
+### API Layer
 
+* Case Management APIs
+* Investigation APIs
+* Statistics APIs
+* High-Priority Case APIs
 
-\- Brute Force
+---
 
-\- SQL Injection
+##  High-Level Architecture
 
-\- XSS
+Log Sources
+↓
+Log Collection Agent
+↓
+Detection Agent
+↓
+MITRE ATT&CK Agent
+↓
+Threat Intelligence Agent
+↓
+Correlation Agent
+↓
+Severity Escalation Agent
+↓
+Case Management Agent
+↓
+Investigation Agent
+↓
+FastAPI Backend
+↓
+React Dashboard
 
-\- API Abuse
+---
 
-\- Session Hijacking
+##  Platform Screenshots
 
+* Security Dashboard
+* Escalated AI Cases
+* Investigation Portal
+* API Documentation
 
+---
 
-Each incident returns:
+##  Roadmap
 
+* Advanced Local LLM Investigations
+* AI Security Copilot
+* Automated Remediation Workflows
+* Real-Time Streaming Analytics
+* Multi-Agent Security Orchestration
+* Cloud-Native Deployment
+* Advanced Threat Hunting
 
+---
 
-\- Attack type
+##  Project Goal
 
-\- Severity
-
-\- MITRE ATT\&CK technique
-
-\- Recommended remediation actions
-
-
-
-\## Interactive AI SOC Assistant
-
-
-
-Run:
-
-
-
-```bash
-
-python ai\_soc\_assistant.py
-
-
-
-Which incidents should I escalate?
-
-Show MITRE mapping
-
-Give me remediation actions
-
-Give me summary
-
-
-
-The assistant reads mcp\_incident\_reports.json and answers SOC analyst questions.
-
-
-
-
-
-Then commit:
-
-
-
-```powershell
-
-git add .
-
-git commit -m "Add interactive SOC assistant documentation"
-
+Demonstrate how Agentic AI can be applied to modern Security Operations Centers (SOC) by combining threat detection, intelligence enrichment, investigation workflows, and case management into a unified security platform.

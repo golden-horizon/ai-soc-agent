@@ -1,20 +1,43 @@
 # Python
-__pycache__/
+
+**pycache**/
 *.pyc
+
+# Virtual environments
+
 .venv/
+venv/
+
+# Secrets
+
 .env
 
-# Reports / generated files
-reports/*.json
+# Generated reports
 
-# Large MITRE database
+reports/
+reports/**/*.json
+
+# Large datasets
+
 enterprise-attack.json
 
 # Jupyter
+
 .ipynb_checkpoints/
 
-# Archive learning files
+# Archive / learning files
+
 archive/
 
-reports/cases/
-reports/*.json
+# Frontend
+
+node_modules/
+dist/
+
+# VS Code
+
+.vscode/
+
+# Logs
+
+*.log

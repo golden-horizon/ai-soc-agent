@@ -56,6 +56,17 @@ Decision: {case.get("soc_decision")}
     table.add_row("Escalation Reason", case.get("escalation_reason", "none"))
     table.add_row("Last Seen", case.get("last_seen", "not updated"))
 
+    
+
+    notes = case.get("analyst_notes", [])
+
+    if notes:
+        latest_note = notes[-1]
+        table.add_row(
+        "Latest Note",
+        f"{latest_note['analyst']}: {latest_note['note']}"
+    )
+
     console.print(table)
 
 
